@@ -34,14 +34,6 @@ export default function Root({isAuthenticated, setAuth}) {
       </header>
 
       <div id="posts">
-        <div className="post">
-          <h3>Username</h3>
-          <p>i ate pasta todayy</p>
-        </div>
-        <div className="post">
-          <h3>Username</h3>
-          <p>i ate pasta todayy</p>
-        </div>
         {console.log(posts)}
         {posts.map((post, idx) => {
           return (
