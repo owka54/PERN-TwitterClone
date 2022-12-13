@@ -24,7 +24,7 @@ function App() {
         <h1>TwitterClone</h1>
         <ul id="links">
           <li><a href="">My posts</a></li>
-          <li><a href="">Login</a></li>
+          <li><a href="login">Login</a></li>
         </ul>
       </header>
 

@@ -9,3 +9,5 @@ app.use(cors());
 app.listen(5000, () => console.log('server listening on port 5000'));
 
 app.use('/posts', require("./routes/posts"));
+
+app.use('/user', require("./routes/users"));
