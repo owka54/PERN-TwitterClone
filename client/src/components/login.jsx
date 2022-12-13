@@ -23,6 +23,7 @@ export default function Login({setAuth}) {
 
             if (token) {
                 localStorage.setItem("token", token);
+                localStorage.setItem("username", username);
                 setAuth(true);
             } else {
                 setAuth(false);

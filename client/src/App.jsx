@@ -5,6 +5,7 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import Login from './components/login'
 import Root from './components/root';
+import NewPost from './components/newPost';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
         url: 'http://localhost:5000/user/is-verify',
         headers: {token: localStorage.token}
       });
-      console.log(response);
+      console.log(response.data);
 
       response.data === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
     } catch (err) {
@@ -32,14 +33,15 @@ function App() {
 
   useEffect(() => {
     isAuth();
-  });
+  }, []);
 
   return (
     <div className="App">
       <Router>
         <Routes>
           <Route exact path='/' element={<Root isAuthenticated={isAuthenticated} setAuth={setAuth}/>} />
-          <Route exact path='login' element={ isAuthenticated === false ? <Login isAuthenticated={isAuthenticated} setAuth={setAuth} /> : <Navigate to='/' />}></Route>
+          <Route exact path='login' element={ isAuthenticated === false ? <Login isAuthenticated={isAuthenticated} setAuth={setAuth} /> : <Navigate to='/' />} />
+          <Route exact path='new-post' element={ isAuthenticated === false ? <Login /> : <NewPost isAuthenticated={isAuthenticated}/>} />
         </Routes>
       </Router>
     </div>
