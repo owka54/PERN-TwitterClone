@@ -1,0 +1,45 @@
+html, body {
+    margin: 0;
+}
+
+header {
+    background-color: crimson;
+    height: 4rem;
+    padding: 1rem;
+    line-height: 4rem;
+}
+
+header h1 {
+    float: left;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#links {
+    margin: 0;
+    float: right;
+    list-style-type: none;
+}
+
+#links li {
+    display: inline;
+    margin-right: 3rem;
+    font-size: 1.5rem;
+}
+
+
+#posts {
+    text-align: center;
+    width: 100%;
+}
+
+.post {
+    background-color: rgb(84, 215, 255);
+    width: 40%;
+    margin: 1rem auto;
+    padding: 1rem;
+}
