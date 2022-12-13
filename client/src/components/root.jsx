@@ -1,0 +1,59 @@
+import '../App.css';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
+export default function Root({isAuthenticated, setAuth}) {
+
+  const [posts, setPosts] = useState([]);
+
+  const getPosts = async (req, res) => {
+    const response = await axios.get('http://localhost:5000/posts');
+
+    setPosts(response.data);
+  }
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
+  const logout = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    setAuth(false);
+  }
+
+  return (
+    <div className="App">
+      <header>
+        <h1>TwitterClone</h1>
+        <ul id="links">
+            <li>{isAuthenticated ? <a href='new-post'>New post</a> : null}</li>
+            <li><a href="">My posts</a></li>
+            <li>{!isAuthenticated ? <a href="login">Login</a> : <button onClick={e => logout(e)}>Logout</button>} </li>
+        </ul>
+      </header>
+
+      <div id="posts">
+        <div className="post">
+          <h3>Username</h3>
+          <p>i ate pasta todayy</p>
+        </div>
+        <div className="post">
+          <h3>Username</h3>
+          <p>i ate pasta todayy</p>
+        </div>
+        {console.log(posts)}
+        {posts.map((post, idx) => {
+          return (
+            <div className="post" key={idx}>
+              <h3>{post.username}</h3>
+              <p>{post.data}</p>
+            </div>
+          )
+        })}
+
+      </div>
+    </div>
+  )
+}
+

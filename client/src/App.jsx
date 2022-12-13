@@ -1,53 +1,47 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
+import Login from './components/login'
+import Root from './components/root';
 
 function App() {
 
-  const [posts, setPosts] = useState([]);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const getPosts = async (req, res) => {
-    const response = await axios.get('http://localhost:5000/posts');
+  const setAuth = (boolean) => {
+    setIsAuthenticated(boolean);
+  }
 
-    setPosts(response.data);
+  const isAuth = async () => {
+    try {
+      const response = await axios({
+        method: 'GET',
+        url: 'http://localhost:5000/user/is-verify',
+        headers: {token: localStorage.token}
+      });
+      console.log(response);
+
+      response.data === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+    } catch (err) {
+      console.error(err.message);
+    }
   }
 
 
   useEffect(() => {
-    getPosts();
-  }, []);
-
+    isAuth();
+  });
 
   return (
     <div className="App">
-      <header>
-        <h1>TwitterClone</h1>
-        <ul id="links">
-          <li><a href="">My posts</a></li>
-          <li><a href="login">Login</a></li>
-        </ul>
-      </header>
-
-      <div id="posts">
-        <div className="post">
-          <h3>Username</h3>
-          <p>i ate pasta todayy</p>
-        </div>
-        <div className="post">
-          <h3>Username</h3>
-          <p>i ate pasta todayy</p>
-        </div>
-        {console.log(posts)}
-        {posts.map((post, idx) => {
-          return (
-            <div className="post" key={idx}>
-              <h3>{post.username}</h3>
-              <p>{post.data}</p>
-            </div>
-          )
-        })}
-
-      </div>
+      <Router>
+        <Routes>
+          <Route exact path='/' element={<Root isAuthenticated={isAuthenticated} setAuth={setAuth}/>} />
+          <Route exact path='login' element={ isAuthenticated === false ? <Login isAuthenticated={isAuthenticated} setAuth={setAuth} /> : <Navigate to='/' />}></Route>
+        </Routes>
+      </Router>
     </div>
   )
 }

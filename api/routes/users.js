@@ -1,6 +1,8 @@
 const pool = require("../db");
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
+const jwtGenerator = require("../utils/jwtGenerator");
+const authorization = require("../middleware/authorization");
 
 
 router.post('/register', async (req, res) => {
@@ -55,11 +57,22 @@ router.post('/login', async (req, res) => {
             return res.status(401).send('Username or password is incorrect');
         }
 
-        res.send('login successful');
+        const token = jwtGenerator(user.rows[0].username);
+
+        res.json({ token });
 
     } catch (err) {
         console.error(err.message);
         res.status(500).send('server error');
+    }
+})
+
+router.get("/is-verify", authorization, async (req, res) => {
+    try {
+        res.json(true);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("server error");
     }
 })
 
