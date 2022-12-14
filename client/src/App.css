@@ -1,5 +1,6 @@
 html, body {
     margin: 0;
+    background-color: rgb(255, 255, 255);
 }
 
 header {
@@ -19,19 +20,27 @@ a {
     color: black;
 }
 
-#links {
+.links {
     margin: 0;
     float: right;
     list-style-type: none;
 }
 
-#links li {
+.links li {
     display: inline;
     margin-right: 3rem;
     font-size: 1.5rem;
 }
+.links li a:hover {
+    color: gold;
+    font-size: 1.7rem;
+}
+.links li button:hover {
+    color: gold;
+    font-size: 1.7rem;
+}
 
-#links button {
+.links button {
     background: none;
     border:none;
     margin:0;
@@ -41,14 +50,38 @@ a {
 }
 
 
-#posts {
-    text-align: center;
-    width: 100%;
+
+.posts h3 {
+    text-align: right;
+    color: white;
 }
 
 .post {
-    background-color: rgb(84, 215, 255);
+    background-color: crimson;
     width: 40%;
     margin: 1rem auto;
     padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+    box-shadow: 0px 0px 2px 2px;
+}
+
+
+#login, #register {
+    text-align: center;
+}
+#login a, #register a {
+    color: crimson;
+}
+.form {
+    border: 1px solid black;
+    border-radius: 1rem;
+    width: 40%;
+    margin: auto;
+}
+.form input {
+    margin: 1rem;
+}
+.form button {
+    margin: 1rem;
 }

@@ -29,17 +29,17 @@ export default function Register({setAuth}) {
     }
 
     return (
-        <>
+        <div id='register'>
             <h1>Register</h1>
 
-            <form onSubmit={onFormSubmit}>
-                <input type="text" placeholder="username" value={username} onChange={e => setUsername(e.target.value)}/>
-                <input type="text" placeholder="email" value={email} onChange={e => setEmail(e.target.value)}/>
-                <input type="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)}/>
+            <form className='form' onSubmit={onFormSubmit}>
+                <input type="text" placeholder="username" value={username} onChange={e => setUsername(e.target.value)}/><br />
+                <input type="text" placeholder="email" value={email} onChange={e => setEmail(e.target.value)}/><br />
+                <input type="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)}/><br />
                 <button>Submit</button>
-            </form>
+            </form><br />
             <a href="login">Login</a>
-        </>
+        </div>
         
     );
 }

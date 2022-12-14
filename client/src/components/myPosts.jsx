@@ -29,13 +29,13 @@ export default function MyPosts({isAuthenticated, setAuth}) {
         <>
             <header>
                 <h1>TwitterClone</h1>
-                <ul id="links">
+                <ul className="links">
                     <li>{isAuthenticated ? <a href='new-post'>New post</a> : null}</li>
                     <li><a href="/">All posts</a></li>
                     <li>{!isAuthenticated ? <a href="login">Login</a> : <button onClick={e => logout(e)}>Logout</button>} </li>
                 </ul>
             </header>
-            <div id="my-posts">
+            <div className="posts">
             {posts.slice(0).reverse().map((post, idx) => {
             return (
                 <div className="post" key={idx}>

@@ -27,14 +27,14 @@ export default function Root({isAuthenticated, setAuth}) {
     <div className="App">
       <header>
         <h1>TwitterClone</h1>
-        <ul id="links">
+        <ul className="links">
             <li>{isAuthenticated ? <a href='new-post'>New post</a> : null}</li>
             <li><a href="my-posts">My posts</a></li>
             <li>{!isAuthenticated ? <a href="login">Login</a> : <button onClick={e => logout(e)}>Logout</button>} </li>
         </ul>
       </header>
 
-      <div id="posts">
+      <div className="posts">
         {console.log(posts)}
         {posts.slice(0).reverse().map((post, idx) => {
           return (

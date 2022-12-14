@@ -36,16 +36,16 @@ export default function Login({setAuth}) {
     }
 
     return (
-        <>
+        <div id='login'>
             <h1>Login</h1>
 
-            <form onSubmit={onFormSubmit}>
-                <input type="text" placeholder="username" value={username} onChange={e => setUsername(e.target.value)}/>
-                <input type="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)}/>
+            <form className='form' onSubmit={onFormSubmit}>
+                <input type="text" placeholder="username" value={username} onChange={e => setUsername(e.target.value)}/><br />
+                <input type="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)}/><br />
                 <button>Submit</button>
-            </form>
+            </form><br />
             <a href="register">Sign up now</a>
-        </>
+        </div>
         
     );
 }
