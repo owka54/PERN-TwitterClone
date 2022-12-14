@@ -13,6 +13,22 @@ router.get('/', async (req, res) => {
         console.error(err.message);
         res.status(500).send('server error');
     }
+}
+)
+router.get('/:username', async (req, res) => {
+    try {
+        const { username } = req.params;
+        console.log(username)
+        const response = await pool.query('SELECT * FROM posts WHERE username = $1', [username]);
+
+        const posts = response.rows;
+
+        res.send(posts);
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('server error');
+    }
 })
 
 router.post('/new', async (req, res) => {

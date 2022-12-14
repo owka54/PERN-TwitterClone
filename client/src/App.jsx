@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Login from './components/login'
 import Root from './components/root';
 import NewPost from './components/newPost';
+import MyPosts from './components/myPosts';
+import Register from './components/register';
 
 function App() {
 
@@ -41,7 +43,9 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Root isAuthenticated={isAuthenticated} setAuth={setAuth}/>} />
           <Route exact path='login' element={ isAuthenticated === false ? <Login isAuthenticated={isAuthenticated} setAuth={setAuth} /> : <Navigate to='/' />} />
-          <Route exact path='new-post' element={ isAuthenticated === false ? <Login /> : <NewPost isAuthenticated={isAuthenticated}/>} />
+          <Route exact path='register' element={ isAuthenticated === false ? <Register isAuthenticated={isAuthenticated} setAuth={setAuth}/> : <Navigate to='/'/>}/>
+          <Route exact path='new-post' element={ isAuthenticated === false ? <Login isAuthenticated={isAuthenticated} setAuth={setAuth}/> : <NewPost isAuthenticated={isAuthenticated}/>} />
+          <Route exact path='my-posts' element={ isAuthenticated === true ? <MyPosts isAuthenticated={isAuthenticated} setAuth={setAuth}/> : <Login isAuthenticated={isAuthenticated} setAuth={setAuth}/>}/>
         </Routes>
       </Router>
     </div>

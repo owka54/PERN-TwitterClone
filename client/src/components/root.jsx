@@ -19,6 +19,7 @@ export default function Root({isAuthenticated, setAuth}) {
   const logout = (e) => {
     e.preventDefault();
     localStorage.removeItem("token");
+    localStorage.removeItem("username");
     setAuth(false);
   }
 
@@ -28,14 +29,14 @@ export default function Root({isAuthenticated, setAuth}) {
         <h1>TwitterClone</h1>
         <ul id="links">
             <li>{isAuthenticated ? <a href='new-post'>New post</a> : null}</li>
-            <li><a href="">My posts</a></li>
+            <li><a href="my-posts">My posts</a></li>
             <li>{!isAuthenticated ? <a href="login">Login</a> : <button onClick={e => logout(e)}>Logout</button>} </li>
         </ul>
       </header>
 
       <div id="posts">
         {console.log(posts)}
-        {posts.map((post, idx) => {
+        {posts.slice(0).reverse().map((post, idx) => {
           return (
             <div className="post" key={idx}>
               <h3>{post.username}</h3>
