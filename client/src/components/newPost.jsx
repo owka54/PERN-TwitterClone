@@ -34,13 +34,13 @@ export default function NewPost() {
     }
 
     return (
-        <>
+        <div id='new-post'>
             <h1>New post</h1>
 
-            <form onSubmit={onFormSubmit}>
-                <input type="text" placeholder="enter text here" value={data} onChange={e => setData((e).target.value)}/>
+            <form className='form' onSubmit={onFormSubmit}>
+                <textarea placeholder="enter text here" value={data} onChange={e => setData((e).target.value)}/><br /><br />
                 <button>Post</button>
             </form>
-        </>
+        </div>
     );
 }

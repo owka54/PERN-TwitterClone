@@ -23,6 +23,8 @@ export default function Root({isAuthenticated, setAuth}) {
     setAuth(false);
   }
 
+  
+
   return (
     <div className="App">
       <header>
@@ -32,6 +34,14 @@ export default function Root({isAuthenticated, setAuth}) {
             <li><a href="my-posts">My posts</a></li>
             <li>{!isAuthenticated ? <a href="login">Login</a> : <button onClick={e => logout(e)}>Logout</button>} </li>
         </ul>
+        <div className='hamburger' onClick={() => {
+          document.querySelector('.hamburger').classList.toggle('active');
+          document.querySelector('.links').classList.toggle('active');
+        }}>
+          <span className='bar'></span>
+          <span className='bar'></span>
+          <span className='bar'></span>
+        </div>
       </header>
 
       <div className="posts">

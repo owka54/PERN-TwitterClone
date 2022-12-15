@@ -34,6 +34,14 @@ export default function MyPosts({isAuthenticated, setAuth}) {
                     <li><a href="/">All posts</a></li>
                     <li>{!isAuthenticated ? <a href="login">Login</a> : <button onClick={e => logout(e)}>Logout</button>} </li>
                 </ul>
+                <div className='hamburger' onClick={() => {
+                    document.querySelector('.hamburger').classList.toggle('active');
+                    document.querySelector('.links').classList.toggle('active');
+                    }}>
+                    <span className='bar'></span>
+                    <span className='bar'></span>
+                    <span className='bar'></span>
+                </div>
             </header>
             <div className="posts">
             {posts.slice(0).reverse().map((post, idx) => {
