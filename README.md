@@ -28,4 +28,9 @@ If you are not logged in you can see all posts but if you click on "My posts" it
 ![My posts page](https://github.com/owka54/PERN-TwitterClone/blob/master/my-posts.png?raw=true)
 
 
+## Features to add
+
+1. Edit posts
+2. Delete posts
+3. Click on users name to see their posts
 
