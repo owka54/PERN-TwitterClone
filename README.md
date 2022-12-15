@@ -30,7 +30,9 @@ If you are not logged in you can see all posts but if you click on "My posts" it
 
 ## Features to add
 
-1. Edit posts
-2. Delete posts
-3. Click on users name to see their posts
+1. Delete posts
+2. Click on users name to see their posts
 
+## Things to fix
+
+1. Empty post shouldn't be allowed

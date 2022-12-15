@@ -46,4 +46,18 @@ router.post('/new', async (req, res) => {
     }
 })
 
+router.put('/:id', async (req, res) => {
+    try {
+        const { data } = req.body;
+        const { id } = req.params;
+        
+        const response = await pool.query('UPDATE posts SET data = $1 WHERE id = $2', [data, id]);
+
+        res.status(200).send('Post edited');
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('server error');
+    }
+})
+
 module.exports = router;

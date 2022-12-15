@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import EditPost from "./editPost";
 
 export default function MyPosts({isAuthenticated, setAuth}) {
 
@@ -47,8 +48,9 @@ export default function MyPosts({isAuthenticated, setAuth}) {
             {posts.slice(0).reverse().map((post, idx) => {
             return (
                 <div className="post" key={idx}>
-                <h3>{post.username}</h3>
-                <p>{post.data}</p>
+                    <h3>{post.username}</h3>
+                    <p>{post.data}</p>
+                    <EditPost post={post} />
                 </div>
             )
             })}

@@ -1,19 +1,75 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 html, body {
     margin: 0;
     background-color: rgb(255, 255, 255);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem;
 }
 
 header {
     background-color: crimson;
     height: 4rem;
     padding: 1rem;
-    line-height: 4rem;
+    line-height: 2rem;
     border-bottom: 2px solid black;
 }
 
 header h1 {
     float: left;
     margin: 0;
+    font-size: 2rem;
 }
 header h1:hover {
     cursor: default;
@@ -52,7 +108,7 @@ a {
     margin:0;
     padding:0;
     cursor: pointer;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 
@@ -60,11 +116,14 @@ a {
 .posts h3 {
     text-align: right;
     color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .post {
     background-color: crimson;
     width: 40%;
+    height: 6rem;
     margin: 1rem auto;
     padding: 1rem;
     border-radius: 1rem;
@@ -72,6 +131,9 @@ a {
     box-shadow: 0px 0px 2px 2px;
 }
 
+.post button {
+    margin-left: 29rem;
+}
 
 #login, #register, #new-post {
     text-align: center;
@@ -94,8 +156,9 @@ a {
     margin: 1rem;
 }
 #new-post textarea {
+    margin: 1rem 0 0;
     height: 5rem;
-    width: 15rem;
+    width: 75%;
 }
 #new-post button {
     width: 10rem;
@@ -117,6 +180,11 @@ a {
     transition: all 0.3s ease-in-out;
     background-color: white;
 }
+
+.modal-open textarea {
+    width: 100%;
+}
+
 
 @media only screen and (max-width: 700px) {
     .hamburger {
