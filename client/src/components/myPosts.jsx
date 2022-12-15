@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import EditPost from "./editPost";
+import Button from 'react-bootstrap/Button';
+import DeletePost from "./deletePost";
+
 
 export default function MyPosts({isAuthenticated, setAuth}) {
 
@@ -50,7 +53,12 @@ export default function MyPosts({isAuthenticated, setAuth}) {
                 <div className="post" key={idx}>
                     <h3>{post.username}</h3>
                     <p>{post.data}</p>
-                    <EditPost post={post} />
+                    <div className="buttons">
+                        <DeletePost post={post} />
+                        {console.log(post)}
+                        <EditPost post={post} />
+                    </div>
+                    
                 </div>
             )
             })}

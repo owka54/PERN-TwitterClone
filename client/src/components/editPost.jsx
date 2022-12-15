@@ -4,7 +4,6 @@ import Modal from 'react-bootstrap/Modal';
 import axios from "axios";
 
 export default function EditPost({post}) {
-    console.log(post.id)
 
     const [data, setData] = useState(post.data);
 
