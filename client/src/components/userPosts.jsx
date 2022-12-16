@@ -35,7 +35,7 @@ export default function UserPosts({isAuthenticated, setAuth}) {
         
         <>
             <header>
-                <h1>TwitterClone</h1>
+                <h1>{username}</h1>
                 <ul className="links">
                     <li>{isAuthenticated ? <a href='new-post'>New post</a> : null}</li>
                     <li><a href="/">All posts</a></li>
