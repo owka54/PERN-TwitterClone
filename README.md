@@ -30,7 +30,7 @@ If you are not logged in you can see all posts but if you click on "My posts" it
 
 ## Features to add
 
-1. Click on users name to see their posts
+0. Up to date
 
 ## Things to fix
 

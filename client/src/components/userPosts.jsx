@@ -5,13 +5,16 @@ import Button from 'react-bootstrap/Button';
 import DeletePost from "./deletePost";
 
 
-export default function MyPosts({isAuthenticated, setAuth}) {
+export default function UserPosts({isAuthenticated, setAuth}) {
 
     const [posts, setPosts] = useState([]);
 
+    const username = window.location.pathname;
+
+    console.log(username);
+
 
     const getPosts = async (req, res) => {
-        const username = localStorage.getItem('username');
         const response = await axios.get(`http://localhost:5000/posts/${username}`);
 
         setPosts(response.data);
@@ -52,12 +55,7 @@ export default function MyPosts({isAuthenticated, setAuth}) {
             return (
                 <div className="post" key={idx}>
                     <h3>{post.username}</h3>
-                    <p>{post.data}</p>
-                    <div className="buttons">
-                        <DeletePost post={post} />
-                        <EditPost post={post} />
-                    </div>
-                    
+                    <p>{post.data}</p> 
                 </div>
             )
             })}

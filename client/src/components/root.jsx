@@ -1,6 +1,8 @@
 import '../App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Navigate } from 'react-router-dom';
+import UserPosts from './userPosts';
 
 export default function Root({isAuthenticated, setAuth}) {
 
@@ -23,6 +25,12 @@ export default function Root({isAuthenticated, setAuth}) {
     setAuth(false);
   }
 
+  const showUserPosts = (e) => {
+    e.preventDefault();
+    const user = e.target.innerText;
+    console.log(user);
+    window.location = `/${user}`;
+  }
   
 
   return (
@@ -49,7 +57,7 @@ export default function Root({isAuthenticated, setAuth}) {
         {posts.slice(0).reverse().map((post, idx) => {
           return (
             <div className="post" key={idx}>
-              <h3>{post.username}</h3>
+              <h3><button className='userbtn' onClick={e => showUserPosts(e)}>{post.username}</button></h3>
               <p>{post.data}</p>
             </div>
           )

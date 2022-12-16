@@ -130,6 +130,19 @@ a {
     border: 1px solid black;
     box-shadow: 0px 0px 2px 2px;
 }
+.post button:hover {
+    color: gold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.post .userbtn {
+    background: none;
+    border: none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
 
 .post .buttons {
     position: relative;

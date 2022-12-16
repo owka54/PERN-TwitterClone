@@ -9,6 +9,7 @@ import Root from './components/root';
 import NewPost from './components/newPost';
 import MyPosts from './components/myPosts';
 import Register from './components/register';
+import UserPosts from './components/userPosts';
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
           <Route exact path='register' element={ isAuthenticated === false ? <Register isAuthenticated={isAuthenticated} setAuth={setAuth}/> : <Navigate to='/'/>}/>
           <Route exact path='new-post' element={ isAuthenticated === false ? <Login isAuthenticated={isAuthenticated} setAuth={setAuth}/> : <NewPost isAuthenticated={isAuthenticated}/>} />
           <Route exact path='my-posts' element={ isAuthenticated === true ? <MyPosts isAuthenticated={isAuthenticated} setAuth={setAuth}/> : <Login isAuthenticated={isAuthenticated} setAuth={setAuth}/>}/>
+          <Route path=':username' element={ <UserPosts isAuthenticated={isAuthenticated} setAuth={setAuth}/> }/>
         </Routes>
       </Router>
     </div>
