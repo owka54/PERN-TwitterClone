@@ -30,8 +30,8 @@ If you are not logged in you can see all posts but if you click on "My posts" it
 
 ## Features to add
 
-0. Up to date
+0. Up to date (Until I think of new features)
 
 ## Things to fix
 
-1. Empty post shouldn't be allowed
+0. Nothing to fix (To my knowledge)

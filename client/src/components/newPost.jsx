@@ -38,7 +38,7 @@ export default function NewPost() {
             <h1>New post</h1>
 
             <form className='form' onSubmit={onFormSubmit}>
-                <textarea placeholder="enter text here" value={data} onChange={e => setData((e).target.value)}/><br /><br />
+                <textarea placeholder="enter text here" required value={data} onChange={e => setData((e).target.value)}/><br /><br />
                 <button>Post</button>
             </form>
         </div>
