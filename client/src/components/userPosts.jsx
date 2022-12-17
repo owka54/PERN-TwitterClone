@@ -9,7 +9,7 @@ export default function UserPosts({isAuthenticated, setAuth}) {
 
     const [posts, setPosts] = useState([]);
 
-    const username = window.location.pathname;
+    const username = window.location.pathname.slice(1);
 
     console.log(username);
 
