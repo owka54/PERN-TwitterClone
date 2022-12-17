@@ -25,7 +25,19 @@ If you are not logged in you can see all posts but if you click on "My posts" it
 ![Home page - With posts](https://github.com/owka54/PERN-TwitterClone/blob/master/home-withposts.png?raw=true)
 
 6. My posts page (Logged in as bob)
+ - Can edit a post or delete it.
 ![My posts page](https://github.com/owka54/PERN-TwitterClone/blob/master/my-posts.png?raw=true)
+
+7. Edit post page
+![Edit post page](https://github.com/owka54/PERN-TwitterClone/blob/master/edit-post.png?raw=true)
+
+8. See all of another user's posts
+- Click their username on a post
+![Home page - Hover over username](https://github.com/owka54/PERN-TwitterClone/blob/master/name-hover.png?raw=true)
+
+- View their posts
+![User posts page](https://github.com/owka54/PERN-TwitterClone/blob/master/user-posts.png?raw=true)
+
 
 
 ## Features to add
