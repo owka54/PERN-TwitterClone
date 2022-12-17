@@ -23,7 +23,7 @@ function App() {
     try {
       const response = await axios({
         method: 'GET',
-        url: 'http://localhost:5000/user/is-verify',
+        url: 'https://twitter-clone-25th.onrender.com/user/is-verify',
         headers: {token: localStorage.token}
       });
       console.log(response.data);

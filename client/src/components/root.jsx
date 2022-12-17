@@ -9,7 +9,7 @@ export default function Root({isAuthenticated, setAuth}) {
   const [posts, setPosts] = useState([]);
 
   const getPosts = async (req, res) => {
-    const response = await axios.get('http://localhost:5000/posts');
+    const response = await axios.get('https://twitter-clone-25th.onrender.com/posts');
 
     setPosts(response.data);
   }

@@ -15,7 +15,7 @@ export default function Login({setAuth}) {
 
             const response = await axios({
                 method: 'POST',
-                url: 'http://localhost:5000/user/login',
+                url: 'https://twitter-clone-25th.onrender.com/user/login',
                 data: body
             });
 

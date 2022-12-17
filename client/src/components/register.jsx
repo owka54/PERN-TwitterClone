@@ -16,7 +16,7 @@ export default function Register({setAuth}) {
 
             const response = await axios({
                 method: 'POST',
-                url: 'http://localhost:5000/user/register',
+                url: 'https://twitter-clone-25th.onrender.com/user/register',
                 data: body
             });
 

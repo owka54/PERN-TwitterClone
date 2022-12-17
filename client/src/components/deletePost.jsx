@@ -9,7 +9,7 @@ export default function DeletePost({post}) {
         try {
             const response = await axios({
                 method: 'DELETE',
-                url: `http://localhost:5000/posts/${post.id}`,
+                url: `https://twitter-clone-25th.onrender.com/posts/${post.id}`,
             })
 
             window.location = '/my-posts';

@@ -15,7 +15,7 @@ export default function UserPosts({isAuthenticated, setAuth}) {
 
 
     const getPosts = async (req, res) => {
-        const response = await axios.get(`http://localhost:5000/posts/${username}`);
+        const response = await axios.get(`https://twitter-clone-25th.onrender.com/posts/${username}`);
 
         setPosts(response.data);
     }

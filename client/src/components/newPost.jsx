@@ -24,7 +24,7 @@ export default function NewPost() {
         try {
             const response = await axios({
                 method: 'POST',
-                url: 'http://localhost:5000/posts/new',
+                url: 'https://twitter-clone-25th.onrender.com/posts/new',
                 data: body
             })
             window.location = '/';

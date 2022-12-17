@@ -19,7 +19,7 @@ export default function EditPost({post}) {
 
             const response = await axios({
                 method: 'PUT',
-                url: `http://localhost:5000/posts/${post.id}`,
+                url: `https://twitter-clone-25th.onrender.com/posts/${post.id}`,
                 data: body
             });
             window.location = '/my-posts';
