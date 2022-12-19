@@ -23,6 +23,7 @@ export default function Root({isAuthenticated, setAuth}) {
 
   useEffect(() => {
     getPosts();
+    checkAdmin();
   }, []);
 
   const logout = (e) => {
