@@ -7,11 +7,18 @@ import UserPosts from './userPosts';
 export default function Root({isAuthenticated, setAuth}) {
 
   const [posts, setPosts] = useState([]);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const getPosts = async (req, res) => {
     const response = await axios.get('https://twitter-clone-25th.onrender.com/posts');
 
     setPosts(response.data);
+  }
+
+  const checkAdmin = async (req, res) => {
+    const response = await axios.get('https://twitter-clone-25th.onrender.com/users/is-admin');
+    console.log(response);
+    setIsAdmin(response);
   }
 
   useEffect(() => {

@@ -130,6 +130,18 @@ app.get('/user/is-verify', authorization, async (req, res) => {
     }
 })
 
+app.get('/user/is-admin', async (req, res) => {
+    const username = req.body;
+
+    connection.query(`SELECT * FROM admin WHERE username = "${username}"`, (err, rows, fields) => {
+        if (rows.length != 0) {
+            res.send(true);
+        } else {
+            res.send(false);
+        }
+    })
+})
+
 
 
 // app.use('/posts', require("./routes/posts"));
