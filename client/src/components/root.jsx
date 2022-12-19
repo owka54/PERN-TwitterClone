@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';
 import UserPosts from './userPosts';
+import DeletePost from './deletePost';
 
 export default function Root({isAuthenticated, setAuth}) {
 
@@ -16,7 +17,8 @@ export default function Root({isAuthenticated, setAuth}) {
   }
 
   const checkAdmin = async (req, res) => {
-    const response = await axios.get('https://twitter-clone-25th.onrender.com/users/is-admin');
+    const username = localStorage.getItem('username');
+    const response = await axios.get(`https://twitter-clone-25th.onrender.com/users/is-admin/${username}`);
     console.log(response);
     setIsAdmin(response);
   }
@@ -25,6 +27,8 @@ export default function Root({isAuthenticated, setAuth}) {
     getPosts();
     checkAdmin();
   }, []);
+
+  console.log(isAdmin);
 
   const logout = (e) => {
     e.preventDefault();
@@ -61,12 +65,13 @@ export default function Root({isAuthenticated, setAuth}) {
       </header>
 
       <div className="posts">
-        {console.log(posts)}
+        {console.log(isAdmin)}
         {posts.slice(0).reverse().map((post, idx) => {
           return (
             <div className="post" key={idx}>
               <h3><button className='userbtn' onClick={e => showUserPosts(e)}>{post.username}</button></h3>
               <p>{post.data}</p>
+              {isAdmin ? <DeletePost post={post} /> : <p>Not admin</p>}
             </div>
           )
         })}

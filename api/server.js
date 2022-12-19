@@ -130,12 +130,13 @@ app.get('/user/is-verify', authorization, async (req, res) => {
     }
 })
 
-app.get('/user/is-admin', async (req, res) => {
-    const username = req.body;
+app.get('/user/is-admin/:username', async (req, res) => {
+    const { username } = req.params;
 
     connection.query(`SELECT * FROM admin WHERE username = "${username}"`, (err, rows, fields) => {
+        console.log(rows);
         if (rows.length != 0) {
-            res.send(true);
+            res.json(true);
         } else {
             res.send(false);
         }
