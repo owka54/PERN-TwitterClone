@@ -6,6 +6,8 @@ While logged in you can create new posts and see all of your posts and all posts
 
 If you are not logged in you can see all posts but if you click on "My posts" it will redirect you to login.
 
+Live site: https://jade-sunshine-f54ff9.netlify.app/
+
 
 ## Images from the app
 
@@ -43,6 +45,8 @@ If you are not logged in you can see all posts but if you click on "My posts" it
 ## Features to add
 
 0. Up to date (Until I think of new features)
+
+1. Add administrator role to keep content managed
 
 ## Things to fix
 
