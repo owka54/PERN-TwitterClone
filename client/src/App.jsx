@@ -34,16 +34,29 @@ function App() {
     }
   }
 
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  const checkAdmin = async (req, res) => {
+    const username = localStorage.getItem('username');
+    const response = await axios.get(`https://twitter-clone-25th.onrender.com/user/is-admin/${username}`);
+    response.data === true ? setIsAdmin(true) : setIsAdmin(false);
+  }
+
+  const setAdmin = (boolean) => {
+    setIsAdmin(boolean);
+  };
+
 
   useEffect(() => {
     isAuth();
+    checkAdmin();
   }, []);
 
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route exact path='/' element={<Root isAuthenticated={isAuthenticated} setAuth={setAuth}/>} />
+          <Route exact path='/' element={<Root isAuthenticated={isAuthenticated} setAuth={setAuth} isAdmin={isAdmin} setAdmin={setAdmin}/> } />
           <Route exact path='login' element={ isAuthenticated === false ? <Login isAuthenticated={isAuthenticated} setAuth={setAuth} /> : <Navigate to='/' />} />
           <Route exact path='register' element={ isAuthenticated === false ? <Register isAuthenticated={isAuthenticated} setAuth={setAuth}/> : <Navigate to='/'/>}/>
           <Route exact path='new-post' element={ isAuthenticated === false ? <Login isAuthenticated={isAuthenticated} setAuth={setAuth}/> : <NewPost isAuthenticated={isAuthenticated}/>} />

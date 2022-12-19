@@ -12,6 +12,7 @@ export default function DeletePost({post}) {
                 url: `https://twitter-clone-25th.onrender.com/posts/${post.id}`,
             })
 
+            console.log(window.location);
             window.location = '/my-posts';
         } catch (err) {
             console.error(err.message);
