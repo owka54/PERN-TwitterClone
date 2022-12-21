@@ -205,10 +205,20 @@ a {
 
 
 @media only screen and (max-width: 700px) {
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1.25rem;
+    }
+
     .hamburger {
         display: block;
         float: right;
-        margin-top: 1.2rem;
         margin-right: 1rem;
     }
 
@@ -226,13 +236,15 @@ a {
         display: flex;
         position: fixed;
         left: -150%;
-        top: 98px;
+        top: 4rem;
         gap: 0;
         flex-direction: column;
         background-color: crimson;
         width: 100%;
         text-align: center;
         transition: 0.3s;
+        z-index: 99;
+        border-bottom: 2px solid black;
     }
 
     .links li {
@@ -242,5 +254,35 @@ a {
     .links.active {
         left: 0;
         padding: 0;
+    }
+
+    .post {
+        width: 75%;
+        min-width: 15rem;
+        min-height: 7rem;
+    }
+    .post .buttons button {
+        text-align: center;
+        width: 3rem;
+        font-size: .75rem;
+        margin-left: .5rem;
+        padding: 0.25rem;
+    }
+
+    #new-post {
+        width: 100%;
+    }
+    .form {
+        width: 75%;
+        min-width: 12.5rem;
+    }
+    #new-post textarea {
+        margin: .5rem 0 0;
+        height: 10rem;
+        width: 75%;
+    }
+    #new-post button {
+        width: 7.5rem;
+        height: 3rem;
     }
 }
