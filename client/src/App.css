@@ -262,6 +262,7 @@ a {
         min-height: 7rem;
     }
     .post .buttons button {
+        position: relative;
         text-align: center;
         width: 3rem;
         font-size: .75rem;
