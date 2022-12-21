@@ -261,6 +261,9 @@ a {
         min-width: 15rem;
         min-height: 7rem;
     }
+    .post .buttons {
+        position: relative;
+    }
     .post .buttons button {
         position: relative;
         text-align: center;
