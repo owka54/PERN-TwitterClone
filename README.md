@@ -48,5 +48,5 @@ Live site: https://jade-sunshine-f54ff9.netlify.app/
 
 ## Things to fix
 
-1. Styling issues ( ~~buttons outside of post box, hamburger menu not centered in header~~, mobile navigation menu (prevent scrolling when open)
+1. Styling issues ( ~~buttons outside of post box,~~ ~~hamburger menu not centered in header~~, ~~mobile navigation menu (prevent scrolling when open)~~
 ~~0. Nothing to fix (To my knowledge)~~

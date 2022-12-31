@@ -49,6 +49,7 @@ export default function Root({isAuthenticated, setAuth, isAdmin, setAdmin}) {
         <div className='hamburger' onClick={() => {
           document.querySelector('.hamburger').classList.toggle('active');
           document.querySelector('.links').classList.toggle('active');
+          document.querySelector('body').classList.toggle('lockScroll');
         }}>
           <span className='bar'></span>
           <span className='bar'></span>
